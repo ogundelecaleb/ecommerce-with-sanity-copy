@@ -6,8 +6,7 @@ you will need node.js version 8.0 or greater installed on your system.
 # setup
 get the code by either cloning this repository using git
 
-git clone https://github.com/sanity-io/example-frontend-next-js.git
-... or downloading source code code as a zip archive.
+downloading source code code as a zip archive.
 
 once downloaded, open the terminal in the project directory, and install dependencies with:
 
