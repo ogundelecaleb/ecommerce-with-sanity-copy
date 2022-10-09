@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai';
+import Link from "next/link";
 
 import { client, urlFor } from '../../lib/client';
 import { Product } from '../../components';
@@ -62,7 +63,7 @@ const ProductDetails = ({ product, products }) => {
           </div>
           <div className="buttons">
             <button type="button" className="add-to-cart" onClick={() => onAdd(product, qty)}>Add to Cart</button>
-            <button type="button" className="buy-now" onClick={handleBuyNow}>Buy Now</button>
+            <button type="button" className="buy-now" onClick={handleBuyNow}>Buy at 70% OFF</button>
           </div>
         </div>
       </div>
