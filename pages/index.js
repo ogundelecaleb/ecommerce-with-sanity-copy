@@ -1,14 +1,18 @@
 import React from 'react';
-
+import { withProtected } from "../src/hook/route";
 import { client } from '../lib/client';
 import { Product, FooterBanner, HeroBanner } from '../components';
 
 
-const Home = ({ products, bannerData }) => (
+function  Home ({ products, bannerData,  auth }) {
+
+  const { logout } = auth;
+  return(
   <div>
     <HeroBanner heroBanner={bannerData.length && bannerData[0]}  />
     <div className="products-heading">
       <h2>Men Kicks</h2>
+      <button onClick={logout}>Logout</button>
       <p>When you're a sneakerhead, you never stop collecting</p>
     </div>
 
@@ -18,7 +22,7 @@ const Home = ({ products, bannerData }) => (
     
     <FooterBanner footerBanner={bannerData && bannerData[0]} />
   </div>
-);
+)};
 
 export const getServerSideProps = async () => {
   const query = '*[_type == "product"]';
@@ -32,4 +36,6 @@ export const getServerSideProps = async () => {
   }
 }
 
-export default Home;
+export default withProtected(Home);
+
+
