@@ -1,17 +1,18 @@
-import React from 'react';
-import { withProtected } from "../src/hook/route";
+import React from "react";
+import { withPublic } from "../src/hook/route";
 import { client } from '../lib/client';
 import { Product, FooterBanner, HeroBanner } from '../components';
 
-function  Home ({ products, bannerData }) {
 
-  // const { logout } = auth;
+function  Login ({ products, bannerData,  auth }) {
+	const { user, loginWithGoogle, error } = auth;
+  
   return(
   <div>
     <HeroBanner heroBanner={bannerData.length && bannerData[0]}  />
     <div className="products-heading">
       <h2>Men Kicks</h2>
-      {/* <button onClick={logout}>Logout</button> */}
+	  <button onClick={loginWithGoogle}>Google</button>
       <p>When you're a sneakerhead, you never stop collecting</p>
     </div>
 
@@ -35,6 +36,6 @@ export const getServerSideProps = async () => {
   }
 }
 
-export default withProtected(Home);
+export default withPublic(Login);
 
 

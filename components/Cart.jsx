@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import Link from "next/link";
+import { withProtected } from "../src/hook/route";
 import {
   AiOutlineMinus,
   AiOutlinePlus,
@@ -135,6 +136,6 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default withProtected (Cart);
 
 // {<Paystack totalPrice={totalPrice}/>}
