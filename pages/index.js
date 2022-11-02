@@ -3,7 +3,6 @@ import { withProtected } from "../src/hook/route";
 import { client } from '../lib/client';
 import { Product, FooterBanner, HeroBanner } from '../components';
 
-
 function  Home ({ products, bannerData,  auth }) {
 
   const { logout } = auth;
