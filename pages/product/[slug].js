@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import Link from "next/link";
-import { withProtected } from "../src/hook/route";
+
 
 import { client, urlFor } from '../../lib/client';
 import { Product } from '../../components';
@@ -119,4 +119,4 @@ export const getStaticProps = async ({ params: { slug }}) => {
   }
 }
 
-export default withProtected(ProductDetails) 
+export default ProductDetails
