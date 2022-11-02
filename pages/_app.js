@@ -13,8 +13,8 @@ function MyApp({ Component, pageProps }) {
     <AuthProvider>
       <StateContext>
       <Layout>
+<AuthStateChanged>
         <Toaster />
-        <AuthStateChanged>
           <Component {...pageProps} />
         </AuthStateChanged>
       </Layout>
